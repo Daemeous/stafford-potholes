@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stafford Pothole Watch</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<script>
+// ── Per-deployment configuration ────────────────────────────────────────────
+// Same pattern as ../Leaflet App/index.html's window.MAP_CONFIG: this file
+// is the only thing that changes per council area. api.js/core.js/styles.css
+// are shared code that reads this config, same split as the leafletting map.
+window.POTHOLE_CONFIG = {
+  // Google Sheet acting as the report database (see AppsScript.txt for the
+  // sheet layout this expects: Reports / Clusters / Authorised / Changelog).
+  SHEET_ID:      "2PACX-1vTaLHvoJUAwQv6EvaNykOyuB0jc1MMQGSpLfHz6sdMjzc7wKFcmcN3kuEYFaTe_Yohl_jo4hCjWDkdC",
+  REPORTS_GID:   "382487012",
+  CLUSTERS_GID:  "1214216756",
+  GOOGLE_CLIENT_ID: "580224381168-i67a13m72bvlpq8rtkhnjk15tic4k9e1.apps.googleusercontent.com",
+  APPS_SCRIPT_URL:  "https://script.google.com/macros/s/AKfycbztniji_qrWEWwZXNlvWK8crwH3_SQJsOcEsxOOP5P-vW8SOcKFx74R-DMtDdjoLIAb0w/exec",
+  LS_SUFFIX: "stafford-potholes", // unique per deployment — used for localStorage keys
+
+  TITLE:    "Stafford Pothole Watch",
+  SUBTITLE: "Report a pothole with your location and a photo. See what's been reported and what's planned.",
+  INITIAL_VIEW: [52.8, -2.12],
+  INITIAL_ZOOM: 12,
+
+  // Set true only for a throwaway public demo deployment — see the same flag
+  // in ../Leaflet App/core.js for what it does and does NOT relax.
+  DISABLE_AUTH_CHECK: false
+};
+</script>
+<!-- External libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+<script src="https://accounts.google.com/gsi/client"></script>
+<!-- Shared application code -->
+<!-- api.js is the ONLY module that talks to Apps Script / the published CSV
+     URLs. core.js calls api.js's functions and never fetches those URLs
+     itself — see api.js's header comment. This is what lets the backend be
+     swapped for a council-hosted API later without touching core.js. -->
+<script src="api.js?v=1"></script>
+<!-- core.js injects the PWA manifest, iOS meta tags, and service worker
+     registration at runtime — see injectPwaHead() in core.js, forked from
+     the same function in ../Leaflet App/core.js. sw.js must stay copied
+     alongside this index.html (service workers must be same-origin). -->
+<script src="core.js?v=1"></script>
+</body>
+</html>
