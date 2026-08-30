@@ -115,11 +115,12 @@ html,body { height:100%; font-family:'DM Sans',sans-serif; background:var(--bg);
   #sidebar-toggle { display:block; }
   /* The toggle button floats above the sidebar (z-index 1001 > 1000) at
      top:12/left:12 so it stays clickable to close the sidebar once open —
-     but that means it sits right on top of the sidebar-head's title text
-     underneath. Push just the title clear of the button's footprint;
-     the subtitle below it already sits low enough to clear it on its own,
-     so it's left at full width. */
-  .sidebar-head h1 { padding-left:40px; }
+     but that means it sits right on top of the sidebar-head's content
+     underneath. Push the whole header down below the button rather than
+     shifting the title right, so it clears regardless of title length
+     (a short single-line title left the subtitle's first line obscured
+     when only the title was shifted). */
+  .sidebar-head { padding-top:60px; }
 }
 #cookie-banner { position:fixed; bottom:0; left:0; right:0; background:var(--panel); border-top:1px solid var(--border); padding:14px 20px; z-index:99999; display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:12px; color:var(--muted); line-height:1.5; }
 #cookie-banner.hidden { display:none; }
