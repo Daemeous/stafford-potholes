@@ -113,14 +113,14 @@ html,body { height:100%; font-family:'DM Sans',sans-serif; background:var(--bg);
   #sidebar { position:absolute; left:0; top:0; bottom:0; transform:translateX(-100%); transition:transform 0.25s; }
   #sidebar.open { transform:translateX(0); }
   #sidebar-toggle { display:block; }
-  /* The toggle button floats above the sidebar (z-index 1001 > 1000) at
-     top:12/left:12 so it stays clickable to close the sidebar once open —
-     but that means it sits right on top of the sidebar-head's content
-     underneath. Push the whole header down below the button rather than
-     shifting the title right, so it clears regardless of title length
-     (a short single-line title left the subtitle's first line obscured
-     when only the title was shifted). */
-  .sidebar-head { padding-top:60px; }
+  /* The toggle button used to float above the sidebar-head at all times
+     (needed so it stayed clickable to close the sidebar once open), which
+     meant it sat on top of the title/subtitle underneath — fixed for a
+     while by pushing the header content out of its way, but simpler to
+     just hide the button while the sidebar is open: tapping the map or
+     almost any sidebar option already closes it (see closeSidebar() in
+     core.js), so the button isn't needed as a close affordance too. */
+  #sidebar.open ~ #map-wrap #sidebar-toggle { display:none; }
 }
 #cookie-banner { position:fixed; bottom:0; left:0; right:0; background:var(--panel); border-top:1px solid var(--border); padding:14px 20px; z-index:99999; display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:12px; color:var(--muted); line-height:1.5; }
 #cookie-banner.hidden { display:none; }
