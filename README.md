@@ -41,3 +41,22 @@ The Apps Script backend (see leaflet-pipeline's `Pothole App/AppsScript.txt`) au
 - `PHOTOS_FOLDER_ID` (the Drive folder pothole photos get uploaded to) is created lazily on first photo upload rather than needing a manual Drive-folder-plus-Script-Property step.
 
 The one step that still has to be done by hand for a new deployment is Google Sheets' own "Publish to web" toggle (Drive API access to flip that programmatically is blocked by this environment's safety tooling, deliberately, since it changes a file's public-sharing state) — see leaflet-pipeline's README for the full deploy sequence.
+
+---
+
+## License
+
+This project's own code is licensed under the **[PolyForm Noncommercial License 1.0.0](LICENSE)**: free to use, share, and modify for any non-commercial purpose, with attribution. See [`LICENSE`](LICENSE) for the full text.
+
+That covers this project's own code only. The road data reports get matched against (via [leaflet-pipeline](https://github.com/Daemeous/leaflet-pipeline)'s `cluster_potholes.py`) is ultimately sourced from OpenStreetMap and Ordnance Survey datasets under their own separate licenses that explicitly permit commercial use (see Attributions below) — this project's non-commercial restriction doesn't, and legally can't, extend to that underlying data.
+
+## Attributions
+
+| Dependency | License | Notes |
+|---|---|---|
+| [Leaflet.js](https://leafletjs.com) | BSD-2-Clause | © Vladimir Agafonkin and contributors |
+| [OpenStreetMap](https://www.openstreetmap.org/copyright) | [ODbL](https://opendatacommons.org/licenses/odbl/) | Map tiles, and (via leaflet-pipeline) the road network reports get snapped to. Permits commercial use; requires attribution and share-alike for derivative databases. |
+| OS Boundary-Line & OS Open UPRN | [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) | © Crown copyright and database right, Ordnance Survey — used by leaflet-pipeline to build the road network this app snaps reports to. Permits commercial use; requires attribution. |
+| [Papa Parse](https://www.papaparse.com) | MIT | CSV parsing |
+| [Turf.js](https://turfjs.org) | MIT | Geospatial analysis |
+| Google Identity Services, Drive & Apps Script | [Google Terms of Service](https://policies.google.com/terms) | Sign-in, photo storage, and the report/cluster backend, all provided by Google |
