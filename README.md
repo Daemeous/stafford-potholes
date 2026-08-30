@@ -48,6 +48,8 @@ The one step that still has to be done by hand for a new deployment is Google Sh
 
 This project's own code is licensed under the **[PolyForm Noncommercial License 1.0.0](LICENSE)**: free to use, share, and modify for any non-commercial purpose, with attribution. See [`LICENSE`](LICENSE) for the full text.
 
+Copyright © Daniel Hodgkins.
+
 That covers this project's own code only. The road data reports get matched against (via [leaflet-pipeline](https://github.com/Daemeous/leaflet-pipeline)'s `cluster_potholes.py`) is ultimately sourced from OpenStreetMap and Ordnance Survey datasets under their own separate licenses that explicitly permit commercial use (see Attributions below) — this project's non-commercial restriction doesn't, and legally can't, extend to that underlying data.
 
 ## Attributions
