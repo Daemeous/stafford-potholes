@@ -15,6 +15,7 @@ Sibling project — **[Leafletting Map](https://github.com/Daemeous/leaflet-map)
 | Stone, Great Wyrley & Penkridge | https://daemeous.github.io/stone/ |
 | Barnsley, Penistone & Stocksbridge | https://daemeous.github.io/barnsley/ |
 | St Helens | https://daemeous.github.io/sthelens/ |
+| Shipley + Keighley and Ilkley | https://daemeous.github.io/shipley/ |
 
 The tooling that creates and deploys a new area's Google Sheet + Apps Script backend (via `clasp`) lives in **[leaflet-pipeline](https://github.com/Daemeous/leaflet-pipeline)**, not in this repo. The road-snapping/clustering script that turns raw reports into prioritised sections (`cluster_potholes.py`) lives there too.
 
