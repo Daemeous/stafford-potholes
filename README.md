@@ -19,6 +19,7 @@ Sibling project — **[Leafletting Map](https://github.com/Daemeous/leaflet-map)
 | Bassetlaw | https://daemeous.github.io/bassetlaw/ |
 | East Grinstead and Uckfield | https://daemeous.github.io/east-grinstead-uckfield/ |
 | Dunstable and Leighton Buzzard | https://daemeous.github.io/dunstable-leighton-buzzard/ |
+| Stockton North & West | https://daemeous.github.io/stockton-north-west/ |
 
 The tooling that creates and deploys a new area's Google Sheet + Apps Script backend (via `clasp`) lives in **[leaflet-pipeline](https://github.com/Daemeous/leaflet-pipeline)**, not in this repo. The road-snapping/clustering script that turns raw reports into prioritised sections (`cluster_potholes.py`) lives there too.
 
